@@ -48,8 +48,7 @@ function Form() {
   function resetToDefault(){
     const form = document.getElementById('form');
     const selectionBox = document.getElementById('operation');
-
-    selectionBox.selectedIndex = 0;
+    setOperation("");
     boolNaN = false;
     form.reset();
   }
@@ -78,11 +77,13 @@ function Form() {
     
   }
 
+  
+
   return (
     <>
       <form id="form" onSubmit={(e)=>submitHandler(e)}>
         <input id="values" name="values" type="text" />
-        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)}>
+        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)} defaultValue="">
           <option value=""></option>
           <option value="sum">sum</option>
           <option value="average">average</option>
