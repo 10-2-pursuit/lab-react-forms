@@ -19,16 +19,17 @@ function Form() {
   }
 
   function modeNumbers(){
-    let tempResult = numbers[0];
-    if(numbers.length == 1){
-      setResult(numbers[0]);
-    }
-    else{
-      for(let index = 1; index<numbers.length; index++){
-        tempResult = tempResult % numbers[index];
+    const occurrences = {};
+    numbers.forEach(num=>occurrences[num] = occurrences[num] ? occurrences[num]+1 : 1);
+    let maxOccurrences = 0;
+    let mode = null;
+    for(const num in occurrences){
+      if(occurrences[num] > maxOccurrences){
+        maxOccurrences = occurrences[num];
+        mode = num
       }
-      (!boolNaN) ? setResult(tempResult) : setResult("Invalid input.");
     }
+    (!boolNaN) ? setResult(mode) : setResult("Invalid input.");
   }
 
   function inputHandler(str){
