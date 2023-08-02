@@ -6,6 +6,7 @@ function Form() {
   const numberRegex = /^-?[0-9]*$/;
   const [intResult, setResult] = useState();
   const [strOperation, setOperation] = useState("");
+  const [isValid, setIsValid] = useState("valid");
   let boolNaN = false;
   let numbers = [];
 
@@ -31,10 +32,12 @@ function Form() {
   }
 
   function inputHandler(str){
+    setIsValid('valid');
     str = str.split(",");
     for(let element of str){
       if(!element.match(numberRegex)){
         boolNaN = true;
+        setIsValid("invalid");
         continue;
       }
       numbers.push(Number(element));
@@ -51,6 +54,7 @@ function Form() {
     setOperation("");
     boolNaN = false;
     form.reset();
+    setIsValid("valid");
   }
 
   function submitHandler(e){
@@ -77,13 +81,17 @@ function Form() {
     
   }
 
-  
+  function textChangeHandler(e){
+    numbers = [];
+    inputHandler(e.target.value);
+
+  }
 
   return (
     <>
       <form id="form" onSubmit={(e)=>submitHandler(e)}>
-        <input id="values" name="values" type="text" />
-        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)} defaultValue="">
+        <input id="values" name="values" type="text" className={isValid} onChange={(e)=>textChangeHandler(e)}/>
+        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)} defaultValue={""}>
           <option value=""></option>
           <option value="sum">sum</option>
           <option value="average">average</option>
