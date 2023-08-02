@@ -94,7 +94,7 @@ function Form() {
     <>
       <form id="form" onSubmit={(e)=>submitHandler(e)}>
         <input id="values" name="values" type="text" className={isValid} onChange={(e)=>textChangeHandler(e)}/>
-        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)} >
+        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)} className={ isValid } >
           <option value=""></option>
           <option value="sum">sum</option>
           <option value="average">average</option>
