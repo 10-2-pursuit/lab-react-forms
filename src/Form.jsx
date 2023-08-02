@@ -39,7 +39,7 @@ function Form() {
       if(!element.match(numberRegex)){
         boolNaN = true;
         setIsValid("invalid");
-        setResult("Invalid input.")
+        setResult("Invalid input.");
         continue;
       }
       numbers.push(Number(element));
@@ -93,7 +93,7 @@ function Form() {
     <>
       <form id="form" onSubmit={(e)=>submitHandler(e)}>
         <input id="values" name="values" type="text" className={isValid} onChange={(e)=>textChangeHandler(e)}/>
-        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)} defaultValue={""}>
+        <select id="operation" name="operation" value={ strOperation } onChange={(e)=>operationHandler(e.target.value)} >
           <option value=""></option>
           <option value="sum">sum</option>
           <option value="average">average</option>
