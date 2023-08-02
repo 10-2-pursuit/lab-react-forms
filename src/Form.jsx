@@ -33,11 +33,13 @@ function Form() {
 
   function inputHandler(str){
     setIsValid('valid');
+    setResult(null);
     str = str.split(",");
     for(let element of str){
       if(!element.match(numberRegex)){
         boolNaN = true;
         setIsValid("invalid");
+        setResult("Invalid input.")
         continue;
       }
       numbers.push(Number(element));
