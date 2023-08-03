@@ -1,7 +1,13 @@
+import { useState } from "react";
 import React from "react";
 import "./Form.css";
 
+
 function Form() {
+  const [input, setInput] = useState("");
+  const [option, setOption] = useState("");
+  const [output, setOutput] = useState("");
+
   return (
     <>
       <form>
