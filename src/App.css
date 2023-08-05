@@ -1,1 +1,20 @@
-/* Add your own CSS! */
+
+    
+  h1{
+    grid-area: header;
+    font-display:unset;
+    background-color: green;
+  }
+  
+  #root {
+  grid-template-columns: 1fr;
+  }
+
+ html {
+     background-image: URL("assets/anime.jpeg"); 
+    }
+  
+ p{
+        background-color:green;
+        padding-bottom: 5px;
+      }
