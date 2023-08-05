@@ -1,27 +1,20 @@
-.wrapper {
-    display: grid;
-    grid-template-columns: 100px;
+
     
   h1{
     grid-area: header;
     font-display:unset;
-    background-color: aqua;
+    background-color: green;
   }
   
   #root {
-    grid-area: main;
-    background-color: lightgreen;
+  grid-template-columns: 1fr;
   }
-    main {
-        background-image:("assets/anime.jpeg");
-      }
-  
 
-  form input,
-  form label
-  form textarea {
-      box-sizing: border-box;
-      display: block;
-      margin: 3px 0;
-      width:100%;
-  }
+ html {
+     background-image: URL("assets/anime.jpeg"); 
+    }
+  
+ p{
+        background-color:green;
+        padding-bottom: 5px;
+      }
