@@ -13,9 +13,21 @@ function Form() {
 const handleOperationChange = (e) => {
   setSelectedOperation(e.target.value);
 };
+
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+};
+
+const numbers = inputValues.split(",").map((num)=> parseFloat(num.trim());)
+
+if(numbers.some(isNaN)){
+  SetResult(`Invalid input.`);
+  return;
+}
+
   return (
     <>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <input id="values" name="values" type="text" value={inputValues} onChange={handleInputchange}/>
         <select id="operation" name="operation" value={SelectedOperation} onChange={handleOperationChange}>
           <option value=""></option>
@@ -26,7 +38,7 @@ const handleOperationChange = (e) => {
         <button type="submit">Calculate</button>
       </form>
       <section id="result">
-        <p></p>
+        <p>{/* display calculated results here*/}</p>
       </section>
     </>
   );
