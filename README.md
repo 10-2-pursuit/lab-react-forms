@@ -80,3 +80,5 @@ There are additional challenges in place should you want to use them.
   - If the input is then changed so that it is valid, remove those classes the next time the "Calculate" button is clicked.
 
 ![Example of the the bonus error styling.](./assets/error.gif)
+
+deployed app on netlify (https://friendly-syrniki-e983e8.netlify.app)
